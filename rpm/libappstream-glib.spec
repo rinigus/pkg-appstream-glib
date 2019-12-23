@@ -89,8 +89,6 @@ from a directory of packages.
 %{_bindir}/appstream-compose
 %dir %{_datadir}/bash-completion/completions/
 %{_datadir}/bash-completion/completions/appstream-util
-%{_mandir}/man1/appstream-util.1.gz
-%{_mandir}/man1/appstream-compose.1.gz
 %{_datadir}/locale/*/*/appstream-glib*mo
 
 %files devel
