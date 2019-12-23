@@ -60,6 +60,8 @@ This library and command line tool is used for building AppStream metadata
 from a directory of packages.
 
 %prep
+echo "Prep"
+
 %setup -q -n %{name}-%{version}/libappstream-glib
 
 %build
