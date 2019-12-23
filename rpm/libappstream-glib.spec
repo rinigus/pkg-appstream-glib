@@ -37,9 +37,6 @@ Requires: libsoup%{?_isa} >= %{libsoup_version}
 
 Provides: appdata-tools
 
-# this is not a library version
-%define as_plugin_version               5
-
 %description
 This library provides GObjects and helper methods to make it easy to read and
 write AppStream metadata. It also provides a simple DOM implementation that
@@ -63,9 +60,10 @@ This library and command line tool is used for building AppStream metadata
 from a directory of packages.
 
 %prep
-%setup -q -n %{name}-%{version}/appstream-glib
+%setup -q -n %{name}-%{version}/libappstream-glib
 
 %build
+echo "Starting build"
 %meson \
     -Dgtk-doc=false \
     -Dstemmer=false \
