@@ -11,9 +11,6 @@ License:   LGPLv2+
 URL:       http://people.freedesktop.org/~hughsient/appstream-glib/
 Source0:   http://people.freedesktop.org/~hughsient/appstream-glib/releases/appstream-glib-%{version}.tar.xz
 
-# Backported from upstream
-Patch0: qt-translations-subdir.patch
-
 BuildRequires: glib2-devel >= %{glib2_version}
 BuildRequires: gobject-introspection-devel
 BuildRequires: gperf
