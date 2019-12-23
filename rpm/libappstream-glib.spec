@@ -23,6 +23,7 @@ BuildRequires: json-glib-devel >= %{json_glib_version}
 BuildRequires: meson
 BuildRequires: rpm-devel
 BuildRequires: git
+BuildRequires: cmake
 
 # for the builder component
 BuildRequires: fontconfig-devel
@@ -67,7 +68,8 @@ from a directory of packages.
 %meson \
     -Dgtk-doc=false \
     -Dstemmer=false \
-    -Ddep11=false
+    -Ddep11=false \
+    -Dfonts=false
 %meson_build
 
 %install
