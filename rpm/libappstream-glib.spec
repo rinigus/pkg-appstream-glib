@@ -15,14 +15,11 @@ Source0:   http://people.freedesktop.org/~hughsient/appstream-glib/releases/apps
 Patch0: qt-translations-subdir.patch
 
 BuildRequires: glib2-devel >= %{glib2_version}
-BuildRequires: docbook-utils
-BuildRequires: gtk-doc
 BuildRequires: gobject-introspection-devel
 BuildRequires: gperf
 BuildRequires: libarchive-devel
 BuildRequires: libsoup-devel >= %{libsoup_version}
 BuildRequires: gdk-pixbuf2-devel >= %{gdk_pixbuf_version}
-BuildRequires: gtk3-devel
 BuildRequires: gettext
 BuildRequires: libuuid-devel
 BuildRequires: libstemmer-devel
@@ -35,10 +32,6 @@ BuildRequires: git-core
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: pango-devel
-
-# for the manpages
-BuildRequires: libxslt
-BuildRequires: docbook-style-xsl
 
 # Make sure we pull in the minimum required versions
 Requires: gdk-pixbuf2%{?_isa} >= %{gdk_pixbuf_version}
@@ -79,11 +72,11 @@ This library and command line tool is used for building AppStream metadata
 from a directory of packages.
 
 %prep
-%autosetup -p1 -Sgit -n appstream-glib-%{version}
+%setup -q -n %{name}-%{version}/appstream-glib
 
 %build
 %meson \
-    -Dgtk-doc=true \
+    -Dgtk-doc=false \
     -Dstemmer=true \
     -Ddep11=false
 %meson_build
@@ -91,12 +84,12 @@ from a directory of packages.
 %install
 %meson_install
 
-%find_lang appstream-glib
+%post -n appstream-glib -p /sbin/ldconfig
 
-%ldconfig_scriptlets
-%ldconfig_scriptlets builder
+%postun -n appstream-glib -p /sbin/ldconfig
 
-%files -f appstream-glib.lang
+
+%files
 %license COPYING
 %doc README.md AUTHORS NEWS
 %{_libdir}/libappstream-glib.so.8*
@@ -107,13 +100,13 @@ from a directory of packages.
 %{_datadir}/bash-completion/completions/appstream-util
 %{_mandir}/man1/appstream-util.1.gz
 %{_mandir}/man1/appstream-compose.1.gz
+%{_datadir}/locale/*/*/appstream-glib*mo
 
 %files devel
 %{_libdir}/libappstream-glib.so
 %{_libdir}/pkgconfig/appstream-glib.pc
 %dir %{_includedir}/libappstream-glib
 %{_includedir}/libappstream-glib/*.h
-%{_datadir}/gtk-doc/html/appstream-glib
 %{_datadir}/gir-1.0/AppStreamGlib-1.0.gir
 %{_datadir}/aclocal/*.m4
 %{_datadir}/installed-tests/appstream-glib/*.test
