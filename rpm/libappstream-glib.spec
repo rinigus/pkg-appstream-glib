@@ -113,7 +113,6 @@ from a directory of packages.
 %{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_hardcoded.so
 %{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_icon.so
 %{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_shell_extension.so
-%{_mandir}/man1/appstream-builder.1.gz
 
 %changelog
 * Thu Nov 14 2019 Kalev Lember <klember@redhat.com> - 0.7.16-2
