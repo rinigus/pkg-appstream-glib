@@ -19,14 +19,13 @@ BuildRequires: gobject-introspection-devel
 BuildRequires: gperf
 BuildRequires: libarchive-devel
 BuildRequires: libsoup-devel >= %{libsoup_version}
-BuildRequires: gdk-pixbuf2-devel >= %{gdk_pixbuf_version}
+BuildRequires: gdk-pixbuf-devel >= %{gdk_pixbuf_version}
 BuildRequires: gettext
 BuildRequires: libuuid-devel
-BuildRequires: libstemmer-devel
 BuildRequires: json-glib-devel >= %{json_glib_version}
 BuildRequires: meson
 BuildRequires: rpm-devel
-BuildRequires: git-core
+BuildRequires: git
 
 # for the builder component
 BuildRequires: fontconfig-devel
@@ -77,7 +76,7 @@ from a directory of packages.
 %build
 %meson \
     -Dgtk-doc=false \
-    -Dstemmer=true \
+    -Dstemmer=false \
     -Ddep11=false
 %meson_build
 
