@@ -9,7 +9,7 @@ Version:   0.7.16
 Release:   2%{?dist}
 License:   LGPLv2+
 URL:       http://people.freedesktop.org/~hughsient/appstream-glib/
-Source0:   http://people.freedesktop.org/~hughsient/appstream-glib/releases/appstream-glib-%{version}.tar.xz
+Source0:   libappstream-glib-%{version}.tar.xz
 
 BuildRequires: glib2-devel >= %{glib2_version}
 BuildRequires: gobject-introspection-devel
@@ -60,12 +60,10 @@ This library and command line tool is used for building AppStream metadata
 from a directory of packages.
 
 %prep
-echo "Prep"
 
 %setup -q -n %{name}-%{version}/libappstream-glib
 
 %build
-echo "Starting build"
 %meson \
     -Dgtk-doc=false \
     -Dstemmer=false \
