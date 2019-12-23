@@ -109,13 +109,7 @@ from a directory of packages.
 %license COPYING
 %{_bindir}/appstream-builder
 %{_datadir}/bash-completion/completions/appstream-builder
-%{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_appdata.so
-%{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_desktop.so
-%{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_font.so
-%{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_gettext.so
-%{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_hardcoded.so
-%{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_icon.so
-%{_libdir}/asb-plugins-%{as_plugin_version}/libasb_plugin_shell_extension.so
+%{_libdir}/asb-plugins-%{as_plugin_version}/*.so
 
 %changelog
 * Thu Nov 14 2019 Kalev Lember <klember@redhat.com> - 0.7.16-2
