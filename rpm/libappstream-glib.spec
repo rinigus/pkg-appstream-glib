@@ -35,12 +35,7 @@ Requires: glib2%{?_isa} >= %{glib2_version}
 Requires: json-glib%{?_isa} >= %{json_glib_version}
 Requires: libsoup%{?_isa} >= %{libsoup_version}
 
-# no longer required
-Obsoletes: appdata-tools < 0.1.9
 Provides: appdata-tools
-
-# Removed in F30
-Obsoletes: libappstream-glib-builder-devel < 0.7.15
 
 # this is not a library version
 %define as_plugin_version               5
@@ -80,9 +75,9 @@ from a directory of packages.
 %install
 %meson_install
 
-%post -n appstream-glib -p /sbin/ldconfig
+%post -n libappstream-glib -p /sbin/ldconfig
 
-%postun -n appstream-glib -p /sbin/ldconfig
+%postun -n libappstream-glib -p /sbin/ldconfig
 
 
 %files
