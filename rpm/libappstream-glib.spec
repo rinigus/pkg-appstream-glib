@@ -31,7 +31,7 @@ BuildRequires: freetype-devel
 BuildRequires: pango-devel
 
 # Make sure we pull in the minimum required versions
-Requires: gdk-pixbuf2%{?_isa} >= %{gdk_pixbuf_version}
+Requires: gdk-pixbuf%{?_isa} >= %{gdk_pixbuf_version}
 Requires: glib2%{?_isa} >= %{glib2_version}
 Requires: json-glib%{?_isa} >= %{json_glib_version}
 Requires: libsoup%{?_isa} >= %{libsoup_version}
