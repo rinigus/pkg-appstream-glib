@@ -5,7 +5,7 @@
 
 Summary:   Library for AppStream metadata
 Name:      libappstream-glib
-Version:   0.7.15
+Version:   0.7.15.1
 Release:   2%{?dist}
 License:   LGPLv2+
 URL:       http://people.freedesktop.org/~hughsient/appstream-glib/
@@ -33,7 +33,7 @@ BuildRequires: pango-devel
 # Make sure we pull in the minimum required versions
 Requires: gdk-pixbuf%{?_isa} >= %{gdk_pixbuf_version}
 Requires: glib2%{?_isa} >= %{glib2_version}
-Requires: json-glib%{?_isa} >= %{json_glib_version}
+Requires: libjson-glib%{?_isa} >= %{json_glib_version}
 Requires: libsoup%{?_isa} >= %{libsoup_version}
 
 Provides: appdata-tools
