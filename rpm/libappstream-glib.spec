@@ -64,6 +64,7 @@ from a directory of packages.
 %build
 %meson \
     -Dgtk-doc=false \
+    -Dman=false \
     -Dstemmer=false \
     -Ddep11=false \
     -Dfonts=false
